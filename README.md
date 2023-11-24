@@ -1,26 +1,23 @@
 # OC_Projet_4
 
- On travaille pour  la ville  Seattle. Pour atteindre son objectif de ville neutre en émissions de carbone en 2050, notre équipe s’intéresse de près à la consommation et aux émissions des bâtiments non destinés à l’habitation.
+We are working for the city of Seattle. To achieve its goal of being a carbon-neutral city by 2050, our team is closely examining the consumption and emissions of non-residential buildings.
 
-Des relevés minutieux ont été effectués par les agents de la ville en 2016. Voici les données et leur source: https://data.seattle.gov/dataset/2016-Building-Energy-Benchmarking/2bpz-gwpy. 
-Cependant, ces relevés sont coûteux à obtenir, et à partir de ceux déjà réalisés, vous voulez tenter de prédire les émissions de CO2 et la consommation totale d’énergie de bâtiments non destinés à l’habitation pour lesquels elles n’ont pas encore été mesurées.
+Detailed records were taken by city agents in 2016. Here are the data and their source: https://data.seattle.gov/dataset/2016-Building-Energy-Benchmarking/2bpz-gwpy.
+However, these surveys are costly to obtain, and from those already conducted, you want to try to predict the CO2 emissions and total energy consumption of non-residential buildings for which they have not yet been measured.
 
-Notre prédiction se basera sur les données structurelles des bâtiments (taille et usage des bâtiments, date de construction, situation géographique, ...)
+Our prediction will be based on the structural data of the buildings (size and use of buildings, date of construction, geographical location, ...)
 
-Nous cherchons également à évaluer l’intérêt de l’"ENERGY STAR Score" pour la prédiction d’émissions, qui est fastidieux à calculer avec l’approche utilisée actuellement par notre équipe. 
-Nous l'intégrerez dans la modélisation et jugerez de son intérêt.
+We are also looking to evaluate the interest of the "ENERGY STAR Score" for the prediction of emissions, which is tedious to calculate with the approach currently used by our team.
+We will integrate it into the modeling and judge its interest.
 
-# Voici un récapitulatif de la mission :
+# Here is a summary of the mission:
+Conduct a short exploratory analysis.
+Test different prediction models to best address the issue.
 
-1. Réaliser une courte analyse exploratoire.
-2. Tester différents modèles de prédiction afin de répondre au mieux à la problématique.
+# Some leads and mistakes to avoid:
+The goal is to do without future annual consumption surveys (be careful of data leakage).
+We will in any case make a first reference survey for any new building in the first year, so nothing prevents you from deducing structural variables to buildings, for example the nature and proportions of the energy sources used.
 
-   
-# Quelques pistes et erreurs à éviter :
+Pay close attention to the treatment of different variables, both to discover new insights (can we deduce interesting information from a simple address?) and to optimize performance by applying simple transformations to variables (normalization, logarithmic transformation, etc.).
 
- L’objectif est de te passer des relevés de consommation annuels futurs (attention à la fuite de données). 
- Nous ferons de toute façon pour tout nouveau bâtiment un premier relevé de référence la première année, donc rien ne t'interdit d’en déduire des variables structurelles aux bâtiments, par exemple la nature et proportions des sources d’énergie utilisées.. 
-
-Fais bien attention au traitement des différentes variables, à la fois pour trouver de nouvelles informations (peut-on déduire des choses intéressantes d’une simple adresse ?) et optimiser les performances en appliquant des transformations simples aux variables (normalisation, passage au log, etc.).
-
-Mets en place une évaluation rigoureuse des performances de la régression, et optimise les hyperparamètres et le choix d’algorithmes de ML à l’aide d’une validation croisée.
+Implement a rigorous evaluation of regression performance, and optimize hyperparameters and the choice of ML algorithms using cross-validation.

@@ -1,23 +1,64 @@
-# OC_Projet_4
+# Seattle Building CO2 Forecasting
 
-We are working for the city of Seattle. To achieve its goal of being a carbon-neutral city by 2050, our team is closely examining the consumption and emissions of non-residential buildings.
+##  Project Overview
 
-Detailed records were taken by city agents in 2016. Here are the data and their source: https://data.seattle.gov/dataset/2016-Building-Energy-Benchmarking/2bpz-gwpy.
-However, these surveys are costly to obtain, and from those already conducted, you want to try to predict the CO2 emissions and total energy consumption of non-residential buildings for which they have not yet been measured.
+This project supports the City of Seattle’s mission to become carbon-neutral by 2050.  
+Using structural building data (such as year built, building type, size, energy sources, and location),  
+we aim to build a machine learning model that predicts:
 
-Our prediction will be based on the structural data of the buildings (size and use of buildings, date of construction, geographical location, ...)
+- Total CO₂ emissions
+- Total energy consumption
 
-We are also looking to evaluate the interest of the "ENERGY STAR Score" for the prediction of emissions, which is tedious to calculate with the approach currently used by our team.
-We will integrate it into the modeling and judge its interest.
+Our predictions reduce the need for costly annual energy audits by providing automated estimations for unmeasured buildings.
 
-# Here is a summary of the mission:
-Conduct a short exploratory analysis.
-Test different prediction models to best address the issue.
+The project also evaluates the relevance of the **ENERGY STAR Score** as a predictor of emissions — currently a labor-intensive metric.
 
-# Some leads and mistakes to avoid:
-The goal is to do without future annual consumption surveys (be careful of data leakage).
-We will in any case make a first reference survey for any new building in the first year, so nothing prevents you from deducing structural variables to buildings, for example the nature and proportions of the energy sources used.
+##  Data
 
-Pay close attention to the treatment of different variables, both to discover new insights (can we deduce interesting information from a simple address?) and to optimize performance by applying simple transformations to variables (normalization, logarithmic transformation, etc.).
+-  [2016 Building Energy Benchmarking dataset](https://data.seattle.gov/dataset/2016-Building-Energy-Benchmarking/2bpz-gwpy)
+- Data includes: Building ID, year built, energy source proportions, ENERGY STAR Score, total GHG emissions, etc.
 
-Implement a rigorous evaluation of regression performance, and optimize hyperparameters and the choice of ML algorithms using cross-validation.
+##  Objectives
+
+- Exploratory Data Analysis (EDA)
+- Feature engineering (e.g., extracting insights from address, log transformation of skewed variables)
+- Test multiple regression models
+- Hyperparameter tuning and cross-validation
+- Estimate performance (R², RMSE, MAE)
+- Assess the usefulness of ENERGY STAR Score
+
+##  Modeling Approaches
+
+- Linear Regression
+- Random Forest Regressor
+- Gradient Boosting (XGBoost, LightGBM)
+- Ridge / Lasso Regression
+- Ensemble models
+
+##  Evaluation Metrics
+
+- R² Score
+- Mean Absolute Error (MAE)
+- Root Mean Squared Error (RMSE)
+- Cross-validated grid search
+
+##  Project Structure
+```
+SeattleBuildingCO2-Forecasting/
+├── data/ # Raw and cleaned data
+├── notebooks/ # EDA and modeling notebooks
+├── models/ # Saved models and hyperparameters
+├── utils/ # Helper functions
+├── reports/ # Visualizations and evaluation reports
+└── README.md
+```
+
+##  Future Improvements
+
+- Integrate recent datasets (post-2016)
+- Deploy model as API for city use
+- Automate ENERGY STAR Score estimation
+- Geospatial feature extraction from building addresses
+
+
+
